@@ -1,0 +1,19 @@
+
+<launch>
+  <node name='sonar_laser__publisher' pkg="turn_on_wheeltec_robot" type="fakelaser" output="screen">
+	<!--param name="frame_id"            type="string" value="fakelaser"/>
+ 	<param name="angle_min"            type="double" value="160.0"/>
+ 	<param name="angle_max"            type="double" value="190.0"/>
+ 	<param name="num_readings"            type="int" value="360"/>
+ 	<param name="laser_frequency"            type="double" value="10"/>
+
+ 	<param name="rangemin"            type="double" value="0.15"/>
+ 	<param name="rangemax"            type="double" value="10"/-->
+ 
+  </node>
+  <!--node pkg="tf" type="static_transform_publisher" name="base_to_fakelaser" args="0.26 0.00 0.228 3.14 0 0  base_footprint fakelaser 100" /-->
+
+
+</launch>
+
+

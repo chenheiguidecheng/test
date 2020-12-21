@@ -1,0 +1,8 @@
+prefix=/home/wheeltec/wheeltec_robot/install
+
+Name: turn_on_wheeltec_robot
+Description: Description of turn_on_wheeltec_robot
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lturn_on_wheeltec_robot
+Requires: 

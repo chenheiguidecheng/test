@@ -1,0 +1,7 @@
+<launch>
+  <node name='point_cloud_publisher' pkg="turn_on_wheeltec_robot" type="pointcloud">
+  </node>
+</launch>
+
+
+

@@ -1,0 +1,28 @@
+<launch>
+  <!--打开节点wheeltec_robot，初始化串口等操作-->
+  <node pkg="turn_on_wheeltec_robot" type="wheeltec_robot_node" name="wheeltec_robot" output="screen">
+    <param name="usart_port_name"    type="string" value="/dev/wheeltec_controller"/>  
+    <param name="serial_baud_rate"   type="int"    value="115200"/>
+    <param name="robot_frame_id"     type="string" value="base_footprint"/>
+    <param name="smoother_cmd_vel"   type="string" value="smoother_cmd_vel"/> 
+    <param name="product_number"   type="int"    value="0"/>
+
+<!--  new -sonar laser--> 
+  <param name="sonar_frame_id"            type="string" value="sonar_laser"/>
+  <param name="angle_min"            type="double" value="172.5"/>
+  <param name="angle_max"            type="double" value="187.5"/>
+  <param name="num_readings"            type="int" value="360"/>
+  <param name="sonar_laser_frequency"            type="double" value="10"/>
+  <param name="rangemin"            type="double" value="0.0"/>
+  <param name="rangemax"            type="double" value="1.5"/>
+ 
+  </node>
+
+    <node pkg="turn_on_wheeltec_robot" type="cmd_vel_to_ackermann_drive.py" name="cmd2ackermann" output="screen">
+  </node>
+  <!-- new  transfrom -->
+  <node pkg="tf" type="static_transform_publisher" name="base_to_sonar_laser" args="0.26 0.00 0.228 3.14 0 0  base_footprint sonar_laser 100" />
+</launch>
+
+
+
